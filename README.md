@@ -19,21 +19,20 @@ imported and as usual the top-level symbols will be available.
 ```
 # settings.conf.py
 ...
-CONTROLLER = {'epics_connection_timeout':   0.1, #in seconds
-              'num_workers':                8,
-              'num_timers':                 4,
-}
+CONTROLLER = {'num_workers':   8,
+              'num_timers':    4}
 ...
 ```
 
 ```
-from caa.conf import settings
+# main.py
+from conf import settings
 ...
 workers = WorkersPool(settings.CONTROLLER['num_workers'])
+...
 ```
 
-
-Any module importing `caa.conf` will have access to the same config, by virtue
+Any module importing `conf` will have access to the same config, by virtue
 of the Python's "module-singleton" nature.
 
 The settings file to be used is defined by the value of an environment variable

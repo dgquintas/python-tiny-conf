@@ -37,6 +37,7 @@ of the Python's "module-singleton" nature.
 
 The settings file to be used is defined by the value of an environment variable
 with the same name as the value given to `ENVIRONMENT_VARIABLE`. For example,
-if `ENVIRONMENT_VARIABLE = FOO` in `conf/__init__.py`, the environment
+if `ENVIRONMENT_VARIABLE = 'FOO'` in `conf/__init__.py`, the environment
 variable `FOO` must exist and point to the Python file holding the
-configuration directives prior to starting the application using `conf`.
+configuration directives prior to starting the application using `conf`. 
+For example, `$ FOO='../foobar.conf.py' python main.py`
